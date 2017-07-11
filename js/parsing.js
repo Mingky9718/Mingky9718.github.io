@@ -5,4 +5,3 @@ function foo() {
 };
 
 console.log("안녕");
-foo();
