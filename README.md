@@ -1,2 +1,2 @@
 # Mingky9718.github.io
-test
+http://mingky9718.github.io
