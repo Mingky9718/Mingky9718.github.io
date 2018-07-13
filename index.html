@@ -1,14 +1,49 @@
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>What Can JavaScript Do?</h2>
-
-<p id="demo">JavaScript can change HTML content.</p>
-
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
-
-</body>
-</html>
-
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <title>HLC RobotC</title>
+        <style>
+            #NameDiv, #AnswerDiv
+            {
+                display: inline-block;
+            }
+            #subFrame
+            {
+                display: none;
+            }
+        </style>
+        <script>
+            let name, answer, button;
+            window.onload=function(){
+                
+            }
+            
+            function submit(){
+                name = document.getElementById('Name');
+                answer = document.getElementById('Answer');
+                
+                let URL = 'https://api.telegram.org/bot633922991:AAFVgz5qR5uB0tSoo3aMOACiiOLajsFE4DM/sendMessage?chat_id=59006391&text=';
+                let Text = name.value + ' ' + answer.value;
+                
+                let subFrame = document.getElementById('subFrame');
+                subFrame.src = URL + Text;
+                
+                name.value = '';
+                answer.value = '';
+            }
+        </script>
+    </HEAD>
+    <BODY>
+        <div id="NameDiv">
+            <h1>이름</h1>
+            <input id="Name" type="text">
+        </div>
+        <div id="AnswerDiv">
+            <h1>정답</h1>
+            <input id="Answer" type="text">
+        </div>
+        <button id="submit" onclick="submit()" type="button">제출</button>
+        <iframe id="subFrame"></iframe>
+    </BODY>
+</HTML>
